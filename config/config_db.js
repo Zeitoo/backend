@@ -1,6 +1,6 @@
 // config/db.js
-import mysql from 'mysql2/promise';
-import dotenv from 'dotenv';
+const mysql = require('mysql2/promise');
+const dotenv = require('dotenv');
 dotenv.config();
 
 const pool = mysql.createPool({
@@ -10,6 +10,7 @@ const pool = mysql.createPool({
   database: process.env.DB_NAME,
 });
 
-export default pool;
+module.exports = { pool };
+
 // This code sets up a MySQL connection pool using the mysql2 library and environment variables for configuration.
 // The pool allows for efficient management of multiple database connections, improving performance for applications that require frequent
