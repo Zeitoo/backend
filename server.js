@@ -4,8 +4,8 @@ const cors = require("cors");
 
 const port = 3000;
 
-const { getTodosPosts } = require("./models/models.js")
-const { putPost } = require("./models/models.js")
+const { getTodosPosts } = require("./models/models.js");
+const { putPost } = require("./models/models.js");
 
 console.log("server starting...");
 
@@ -40,10 +40,10 @@ app.post("/new_video", (req, res) => {
 				return res.status(500).send("Error inserting data");
 			});
 	}
-	res.status(t00).send("Data wasn't received ...");
+	res.status(200).send("Data was received ...");
 });
 
 setTimeout(() => {
 	console.log("Server is shutting down...");
 	process.exit(0);
-}, 30000);
+}, 120000);
